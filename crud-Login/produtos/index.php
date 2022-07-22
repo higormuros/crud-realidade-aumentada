@@ -4,7 +4,8 @@ session_start();
 if(!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']=='S'){
 	header('Location: login.php?login=erro2');
 }else{
-    require_once "../../../crud-login-privado/api-end-points/carregar-produtos.php";
+    $acao="listarProdutos";
+    require_once "../api/index.php";
 }
 ?>
 <html lang="pt-br">
@@ -22,7 +23,6 @@ if(!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']=='S'){
 		crossorigin="anonymous">
 		
 		<title>Página Inicial</title>
-		<link rel="icon" href="myicon.png" type="image/png">
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   </head>
 
@@ -50,7 +50,7 @@ if(!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']=='S'){
        <?php
             foreach($produtos as $produto){?>
                 <div class="bg-white p-3 mb-3">
-                    <a href="ver-produto.php?<?php echo $produto["idmodel"]; ?>" class="link-dark"><?php echo $produto["nome"]; ?></a>
+                    <a href="ver-produto.php?produto=<?php echo $produto["idmodel"]; ?>" class="link-dark" target="_blank"><?php echo $produto["nome"]; ?></a>
                 </div>
             <?php }
        ?>

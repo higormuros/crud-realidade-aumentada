@@ -29,7 +29,7 @@ if(isset($_GET['success']) && $_GET['success']=='f'){
 		crossorigin="anonymous">
 		
 		<title>Minha conta</title>
-		<link rel="icon" href="myicon.png" type="image/png">
+	
   </head>
 
   <body class="bg-light">

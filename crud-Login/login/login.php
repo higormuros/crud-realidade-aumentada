@@ -13,7 +13,7 @@
 		crossorigin="anonymous">
 		
 		<title>Login</title>
-		<link rel="icon" href="myicon.png" type="image/png">
+	
     <style>
       .card-login {
         padding: 30px 0 0 0;
