@@ -67,6 +67,20 @@ class servico{
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);	
 	}
+	public function recuperarProduto($idProduto){
+		$query='SELECT
+				idmodel,
+				nome,
+				arquivo
+				FROM
+				models
+				where
+				idmodel = :id;';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':id',$idProduto);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);	
+	}
 	public function mudarUsuario($nome,$email,$id){
 		$query='UPDATE users SET nome= :nome , email= :email WHERE iduser= :iduser '; 
 		$stmt = $this->conexao->prepare($query);
