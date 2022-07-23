@@ -22,7 +22,7 @@ if(!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']=='S'){
 		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
 		crossorigin="anonymous">
 		
-		<title>Página Inicial</title>
+		<title>Super Sistema - Página Inicial</title>
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   </head>
 

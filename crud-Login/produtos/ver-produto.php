@@ -22,20 +22,19 @@ if(!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']=='S'){
 		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
 		crossorigin="anonymous">
 		
-		<title>Página Inicial</title>
+		<title>Super Sistema - <?php echo $produto[0]["nome"];?></title>
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     </head>
 
     <body class="bg-light">
         <a-scene>
-            <a-assets>
+            <a-assets id="aframe">
                 <a-asset-item id="produto" src="../imagens/<?php echo $produto[0]["arquivo"];?>"></a-asset-item>
             </a-assets>
 
             <a-entity 
                 gltf-model="#produto" 
-                id="produto"
-                position="0 1 -1"
+                position="0 1 -2"
             ></a-entity>
         </a-scene>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" 

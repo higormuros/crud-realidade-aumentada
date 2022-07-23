@@ -1,11 +1,9 @@
 <?php
 //end point da API
-if(isset($_GET['produto'])){
-    if(is_numeric($_GET['produto'])){
-        if(isset($acao) && $acao=="verProduto"){
-            require_once "../../../crud-login-privado/api/carregar-produto.php";
-        } else{
-            require_once "../../../crud-login-privado/api/carregar-produto.php";
+if(isset($_REQUEST['produto'])){
+    if(is_numeric($_REQUEST['produto'])){
+        require_once "../../../crud-login-privado/api/carregar-produto.php";
+        if(!isset($acao) || $acao!=="verProduto"){
             echo str_replace("\/","/",json_encode(
                 array(
                     "id"=>$produto[0]["idmodel"],
@@ -13,7 +11,6 @@ if(isset($_GET['produto'])){
                     "arquivo"=>"dominio/imagens/".$produto[0]["arquivo"]
                 )
             ));
-           
         }
     } else{
         echo "O ID do produto precisa ser numerico";
